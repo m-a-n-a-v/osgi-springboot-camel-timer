@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd     ">
+    <!-- this is an included XML file where we only the routeContext -->
+    <routeContext id="timerRoute" xmlns="http://camel.apache.org/schema/spring">
+        <!-- we can have a route -->
+        <route id="_route1">
+            <from id="_from1" uri="timer:foo?period=3000"/>
+            <setBody id="_setBody1">
+                <constant>Hello World!</constant>
+            </setBody>
+            <log id="_log1" loggingLevel="INFO" message="The message contains ${body}"/>
+        </route>
+    </routeContext>
+</beans>
