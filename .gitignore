@@ -29,3 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+camelmqclient.log
+
+mvnw.cmd
